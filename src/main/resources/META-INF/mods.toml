@@ -1,0 +1,58 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+license = "GNU GPL 3.0"
+issueTrackerURL = "https://github.com/biantwin/cropcritters-scarecrow/issues"
+
+[[mods]]
+modId = "cropcritters_scarecrow"
+version = "${mod_version}"
+displayName = "CropCritters Scarecrow"
+authors = "biantwin"
+logoFile = "cropcritters_scarecrow.png"
+description = '''
+Adds a craftable-free scarecrow structure to CropCritters. Build it with any fence, a hay bale and a carved pumpkin, and the farmland around it is protected.
+
+Structure (bottom to top):
+  Any fence  ->  Hay Bale  ->  Carved Pumpkin  (the pumpkin is the centre)
+
+Within the configured radius (default 32 blocks, square, configurable 1-64):
+  - Crop critters no longer spawn from mature crops
+  - Weeds no longer grow
+  - Farmland no longer degrades when a crop matures
+
+Everything else is left untouched:
+  - Vanilla farmland trampling (falling onto farmland) still works
+  - Lightning and snow farmland degradation still work
+  - Feeding a Lost Soul to a mature crop still spawns a critter on purpose
+
+A scarecrow takes effect as soon as the structure is complete and stops the moment any block is removed. Registered scarecrows persist across world reloads.
+
+Configuration: config/cropcritters_scarecrow-common.toml
+  scarecrow.radius - square effect radius in blocks, 1 to 64, default 32
+
+Requires CropCritters 1.4.2 or newer, which in turn requires GeckoLib.
+'''
+
+[[mixins]]
+config = "cropcritters_scarecrow.mixins.json"
+
+[[dependencies."cropcritters_scarecrow"]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies."cropcritters_scarecrow"]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,1.21)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies."cropcritters_scarecrow"]]
+modId = "cropcritters"
+mandatory = true
+versionRange = "[1.4.2,)"
+ordering = "AFTER"
+side = "BOTH"

@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "biantwin.cropcrittersscarecrow.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixin.refmap.json",
+  "plugin": "biantwin.cropcrittersscarecrow.mixin.ScarecrowMixinPlugin",
+  "mixins": [
+    "CritterHelperMixin",
+    "WeedHelperMixin",
+    "CropTickMarkerMixin",
+    "FarmlandDegradationMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
