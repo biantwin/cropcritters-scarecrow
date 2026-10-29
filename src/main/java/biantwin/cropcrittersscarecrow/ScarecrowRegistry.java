@@ -21,7 +21,7 @@ public class ScarecrowRegistry extends SavedData {
         return level.getServer().overworld().getDataStorage().computeIfAbsent(
                 tag -> read(tag),
                 ScarecrowRegistry::new,
-                "cropcritters_scarecrow/" + id.getNamespace() + "/" + id.getPath());
+                "cropcritters_scarecrow_" + id.getNamespace() + "_" + id.getPath());
     }
 
     public static ScarecrowRegistry read(CompoundTag tag) {
